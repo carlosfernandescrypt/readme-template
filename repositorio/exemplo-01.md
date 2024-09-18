@@ -1,55 +1,58 @@
 # Nome do projeto
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
+<img src="imagem.png" alt="Pagina inicial">
+<img src="imagem.png" alt="Página de pesquisa">
+<img src="imagem.png" alt="Página de favoritos">
 
-<img src="imagem.png" alt="Exemplo imagem">
-
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
-
-### Ajustes e melhorias
-
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
-
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
+> Esse é um projeto de um teste de estágio para o time de desenvolvimento do Coco Bambu. O projeto consiste em um aplicativo onde seja possível pesquisar por livros da Google Books API
+> Nele, você pode adiiconar um livro aos favoritos, adicionar uma avaliação, uma nota pessoal e tags, e também há a possibilidade de filtrar por livros favoritados por meio das tags. 
 
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+- Você instalou a versão mais recente do `<django / angular / docker>`
+- Você tem uma máquina `<Windows / Linux / Mac>`.
 
-## 🚀 Instalando <nome_do_projeto>
+## 🚀 Instalando o projeto
 
-Para instalar o <nome_do_projeto>, siga estas etapas:
+Para clonar o repositorio, navegue até a pasta book-search-app e siga estas etapas:
 
-Linux e macOS:
-
-```
-<comando_de_instalação>
-```
-
-Windows:
+No terminal:
 
 ```
-<comando_de_instalação>
+npm run start 
+```
+Aqui ele vai:
+Iniciar o banco de dados MySQL via Docker.
+Aplicar as migrações no Django e iniciar o backend.
+Iniciar o servidor do frontend (Angular).
+
+
+## ☕ Em caso de algum erro com o npm run start, tente rodar os projeto manualmente:
+
+Navegue até book-favorite-frontend e inicie o servidor do front-end (Angular)
+
+```
+<cd book-favorite-frontend>
+```
+```
+<ng serve>
+```
+Após isso, inicie um conteiner Docker com uma instancia MySQL (Ou qualquer outra de sua preferência, e não se esqueça de 
+modificar os dados do banco de dados no settings.py)
+
+```
+<docker run --name mysql_container -e MYSQL_ROOT_PASSWORD=root_password -e MYSQL_DATABASE=book_favorites_db -e MYSQL_USER=test_user -e MYSQL_PASSWORD=test_password -p 3306:3306 -d mysql:8.0>
 ```
 
-## ☕ Usando <nome_do_projeto>
-
-Para usar <nome_do_projeto>, siga estas etapas:
+Logo após, navegue até book_favorite_back-end faça as migrações do Django e inicie o servidor do back-end.
 
 ```
-<exemplo_de_uso>
+<python manage.py migrate>
+```
+```
+<python manage.py runserver>
 ```
 
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
